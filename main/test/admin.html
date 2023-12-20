@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #contentBox {
+            width: 300px;
+            height: 200px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="contentBox">
+    <h2>Periodic Content</h2>
+    <div id="dynamicContent"></div>
+</div>
+
+<script>
+    // Function to update content periodically
+    function updateContent() {
+        var contentBox = document.getElementById('dynamicContent');
+        var content = 'This is some dynamic content. Updated at: ' + new Date();
+        contentBox.innerHTML = content;
+    }
+
+    // Update content every 5 seconds (adjust as needed)
+    setInterval(updateContent, 5000);
+
+    // Initial update when the page loads
+    updateContent();
+</script>
+
+</body>
+</html>
